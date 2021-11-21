@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+    <name>mod_outsmartmaps</name>
+    <author>Bul-it bv</author>
+    <creationDate>November 2021</creationDate>
+    <copyright>Copyright (C) 2005 - 2021 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>info@outsmartit.be</authorEmail>
+    <authorUrl>http://www.outsmartit.be</authorUrl>
+    <version>1.0.0</version>
+    <description>MOD_OUTSMARTMAPS_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_outsmartmaps">mod_outsmartmaps.php</filename>
+        <folder>tmpl</folder>
+        <folder>assets</folder>
+        <filename>mod_outsmartmaps.xml</filename>
+        <filename>index.html</filename>
+        <filename>script.php</filename>
+    </files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_outsmartmaps.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_outsmartmaps.sys.ini</language>
+        <language tag="nl-NL">nl-NL/nl-NL.mod_outsmartmaps.ini</language>
+        <language tag="nl-NL">nl-NL/nl-NL.mod_outsmartmaps.sys.ini</language>
+    </languages>
+    <help key="JHELP_EXTENSIONS_MODULE_MANAGER_OUTSMARTFACEBOOK" />
+    <config>
+        <fields name="params">
+            <fieldset name="general">
+                <field name="api_key"
+                type = "text"
+                label="MOD_OUTSMARTMAPS_API_LABEL"
+                description="MOD_OUTSMARTMAPS_API_DESC">
+                </field>
+                <field name="map_height"
+                type ="integer"
+                label="MOD_OUTSMARTMAPS_HEIGHT_LABEL"
+                description="MOD_OUTSMARTMAPS_HEIGHT_DESC"
+                default="490"
+                first="70" last="650" step="20"
+                />
+                <field name="gesture_control"
+                type ="list"
+                label="MOD_OUTSMARTMAPS_GESTURE_LABEL"
+                description="MOD_OUTSMARTMAPS_GESTURE_DESC"
+                 default="none">
+                    <option value="none">MOD_OUTSMARTMAPS_NONE</option>
+                    <option value="cooperative">MOD_OUTSMARTMAPS_COOPERATIVE</option>
+                </field>
+                 <field name="lattitude"
+                    type = "text"
+                    label="MOD_OUTSMARTMAPS_LATTITUDE_LABEL"
+                    description="MOD_OUTSMARTMAPS_LATTITUDE_DESC">
+                </field>
+                <field name="longitude"
+                    type = "text"
+                    label="MOD_OUTSMARTMAPS_LONGITUDE_LABEL"
+                    description="MOD_OUTSMARTMAPS_LONGITUDE_DESC">
+                </field>
+               
+                <field name="marker_search"
+                    type = "text"
+                    label="MOD_OUTSMARTMAPS_MARKER_LABEL"
+                    description="MOD_OUTSMARTMAPS_MARKER_DESC">
+                </field>
+            </fieldset>
+            <fieldset name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+                <field
+                    name="moduleclass_sfx"
+                    type="textarea" rows="3"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+                <field
+                    name="cache"
+                    type="list"
+                    default="0"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option
+                        value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <scriptfile>script.php</scriptfile>    
+    <updateservers>
+        <server type="extension" priority="1" name="mod_outsmartmaps">https://raw.githubusercontent.com/outsmartit/outsmartmaps/master/updates.xml</server>
+    </updateservers>
+</extension>
+
+
+
